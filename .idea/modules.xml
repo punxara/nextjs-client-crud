@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../nestjs-api-crud/.idea/nestjs-api-crud.iml" filepath="$PROJECT_DIR$/../nestjs-api-crud/.idea/nestjs-api-crud.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/nextjs-crud.iml" filepath="$PROJECT_DIR$/.idea/nextjs-crud.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../thisuraverse-admin-api/.idea/thisuraverse-admin-api.iml" filepath="$PROJECT_DIR$/../thisuraverse-admin-api/.idea/thisuraverse-admin-api.iml" />
     </modules>
   </component>
 </project>

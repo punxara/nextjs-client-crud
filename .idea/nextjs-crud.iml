@@ -8,6 +8,6 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="thisuraverse-admin-api" />
+    <orderEntry type="module" module-name="nestjs-api-crud" />
   </component>
 </module>
