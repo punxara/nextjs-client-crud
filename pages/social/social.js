@@ -1,26 +1,22 @@
 import { Button, ButtonGroup, Card, Grid, Input, Spacer } from "@geist-ui/core";
 import { AtSign, Link, Save, User } from "@geist-ui/icons";
-import axios from "axios";
 import { useState } from "react";
+import { save } from './social-service';
 
 export default function Social() {
     const [platform, setPlatform] = useState("");
     const [username, setUsername] = useState("");
     const [link, setLink] = useState("");
 
-    function handleSubmit(e) {
+    async function submitForm(e) {
         e.preventDefault();
-        axios.post('http://localhost:3500/social', {
-            platform: platform,
-            username: username,
-            link: link,
-        })
-            .then(function (response) {
-                console.log(response);
-            })
-            .catch(function (error) {
-                console.log(error);
-            });
+        const data = { platform, username, link };
+        try {
+            const response = await save(data);
+            console.log(response);
+        } catch (error) {
+            console.log(error);
+        }
     }
 
     return (
@@ -61,7 +57,7 @@ export default function Social() {
                                 setUsername("");
                                 setLink("");
                             }}>Reset</Button>
-                            <Button icon={<Save />} onClick={handleSubmit}>Save</Button>
+                            <Button icon={<Save />} onClick={submitForm}>Save</Button>
                         </ButtonGroup>
                     </Card>
                 </form>
