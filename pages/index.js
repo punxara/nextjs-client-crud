@@ -5,7 +5,7 @@ export default function Home() {
   return (
       <GeistProvider>
           <CssBaseline />
-          <Page>
+          <Page width={'100%'}>
               {/*<Page.Header>*/}
                   {/*<h2>Header</h2>*/}
               {/*</Page.Header>*/}

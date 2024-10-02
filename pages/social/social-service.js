@@ -10,6 +10,15 @@ export const save = async (data) => {
     }
 };
 
+export const update = async (id, data) => {
+    try {
+        const response = await axios.put(`${environments.BASE_URL}/social/${id}`, data);
+        return response.data;
+    } catch (error) {
+        throw error;
+    }
+};
+
 export const getAll = async () => {
     try {
         const response = await axios.get(`${environments.BASE_URL}/social/get-all-socials`);
@@ -19,7 +28,7 @@ export const getAll = async () => {
     }
 }
 
-export const deleteItem = async (id) => {
+export const remove = async (id) => {
     try {
         const response = await axios.delete(`${environments.BASE_URL}/social/${id}`);
         return response.data;
