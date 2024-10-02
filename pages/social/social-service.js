@@ -1,10 +1,9 @@
 import axios from 'axios';
-
-const API_URL = 'http://localhost:3500/social';
+import {environments} from "../../environments/environments";
 
 export const save = async (data) => {
     try {
-        const response = await axios.post(API_URL, data);
+        const response = await axios.post(`${environments.BASE_URL}/social`, data);
         return response.data;
     } catch (error) {
         throw error;
