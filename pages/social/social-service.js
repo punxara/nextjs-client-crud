@@ -9,3 +9,12 @@ export const save = async (data) => {
         throw error;
     }
 };
+
+export const getAll = async () => {
+    try {
+        const response = await axios.get(`${environments.BASE_URL}/social/get-all-socials`);
+        return response.data;
+    } catch (error) {
+        throw error;
+    }
+}

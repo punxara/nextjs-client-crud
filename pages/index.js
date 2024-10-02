@@ -11,12 +11,12 @@ export default function Home() {
               {/*</Page.Header>*/}
               {/*<Page.Content>*/}
                   <Tabs initialValue="1" align="center" leftSpace={0}>
-                      <Tabs.Item label={<><Film /> Projects</>} value="1">
-                          projects work
-                      </Tabs.Item>
-                      <Tabs.Item label={<><AtSign /> Socials </>} value="2">
+                      <Tabs.Item label={<><AtSign /> Socials </>} value="1">
                           <Social/>
                           {/*<Text mt={0}>The Components of React looks very cool.</Text>*/}
+                      </Tabs.Item>
+                      <Tabs.Item label={<><Film /> Projects</>} value="2">
+                          projects work
                       </Tabs.Item>
                   </Tabs>
               {/*</Page.Content>*/}
