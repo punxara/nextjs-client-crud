@@ -18,3 +18,12 @@ export const getAll = async () => {
         throw error;
     }
 }
+
+export const deleteItem = async (id) => {
+    try {
+        const response = await axios.delete(`${environments.BASE_URL}/social/${id}`);
+        return response.data;
+    } catch (error) {
+        throw error;
+    }
+}
