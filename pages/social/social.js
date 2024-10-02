@@ -50,7 +50,7 @@ export default function Social() {
         try {
             if (isEdit) {
                 await update(editId, dataToSave);
-                setData(prevData => prevData.map(item => item.id === editId ? { ...item, ...dataToSave } : item));
+                setData(prevData => prevData.map(item => item.id === editId ? {...item, ...dataToSave} : item));
                 setNote({type: 'success', message: 'Successfully updated.', visible: true});
             } else {
                 const response = await save(dataToSave);
@@ -73,7 +73,7 @@ export default function Social() {
 
     const renderAction = (id, rowData) => {
         return (
-            <ButtonGroup>
+            <ButtonGroup ghost>
                 <Button icon={<Edit color="blue"/>}
                         onClick={(e) => editItem(e, rowData.id, rowData)}
                 ></Button>
@@ -102,9 +102,10 @@ export default function Social() {
                                name="link" id="link"/>
                         <Spacer h={0.5}/>
                         <Button width={'100%'} type={'success'} ghost icon={<Save/>} onClick={saveItem}
-                                disabled={!(platform.length > 0 && username.length > 0 && link.length > 0)}
-                        >{isEdit ? 'Update' : 'Save'}</Button>
-                         {/*{note.visible && <Note label={false} type={note.type}>{note.message}</Note>}*/}
+                                disabled={!(platform.length > 0 && username.length > 0 && link.length > 0)}>
+                            {isEdit ? 'Update' : 'Create'}
+                        </Button>
+                        {/*{note.visible && <Note label={false} type={note.type}>{note.message}</Note>}*/}
                     </form>
                 </Grid>
 
